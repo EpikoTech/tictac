@@ -76,4 +76,33 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         correoError.style.display = 'none';  
     }
 
+    const fecha_nacimiento = document.getElementById('fecha_nacimiento')
+    const fecha_nacimientoError = document.getElementById('fecha_nacimientoError')
+
+
+    // Expresión regular para validar el formato dd/mm/yyyy
+    const fechaNacimientoRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
+
+    if (!fechaNacimientoRegex.test(fecha_nacimiento.value.trim())) {
+        fecha_nacimientoError.style.display = 'block';  // Mostrar mensaje de error si el formato es incorrecto
+        fecha_nacimientoError.textContent = 'La fecha debe tener el formato dd/mm/aaaa.';
+    } else {
+        // Si el formato es válido, verifica que sea una fecha válida
+        const [dia, mes, anio] = fecha_nacimiento.value.split('/').map(Number);
+        const fechaValida = new Date(anio, mes - 1, dia);
+        
+        if (
+            fechaValida.getFullYear() === anio &&
+            fechaValida.getMonth() === mes - 1 &&
+            fechaValida.getDate() === dia
+        ) {
+            fecha_nacimientoError.style.display = 'none';  // Ocultar mensaje si la fecha es válida
+            alert('Fecha de nacimiento válida');
+        } else {
+            fecha_nacimientoError.style.display = 'block';  // Mostrar error si la fecha no es válida
+            fecha_nacimientoError.textContent = 'La fecha ingresada no es válida.';
+        }
+    }
+
+
 })
