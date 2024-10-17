@@ -8,9 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $cel = $_POST['telefono'];
     $fecha = $_POST['fecha_nacimiento'];
-    $vali = $_POST['validacion'];
-
-
+    $vali = $_POST['check'];
     $base = "proyecto_tictac";
     $user = "root";
     $pass = "pass";
@@ -19,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = new PDO("mysql:host=$host;dbname=$base", $user, $pass);
         $conn->beginTransaction();
         $sql = "INSERT INTO `proyecto_tictac`.`usuarios` 
-        (`nombres`, `apellidos`, `correo`,`celular`,`dni`,`fecha nacimiento`) 
+        (`nombres`, `apellidos`, `correo`,`celular`,`dni`,`fecha_nacimiento`,`val_term_cond`) 
         VALUES 
-        ('$nombre', '$apellido', '$correo','$cel','$dni','$fecha',$val);";
+        ('$nombre', '$apellido', '$correo','$cel','$dni','$fecha',$vali);";
 
         $conn->exec($sql);
         $conn->commit();
