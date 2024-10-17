@@ -32,16 +32,17 @@ function inicio_sesion() {
 
 }
 function nuevo_usuario(){
-    const usuario= $('usuario').val();
-    const password= $('clave').val();
-    const dni= $('dni').val();
-    const nombre= $('nombres').val();
-    const apellidos= $('apellidos').val();
-    const correo = $('correo').val();
-    const telefono = $('telefono').val();
-    const fecha_n =$('fecha_nacimiento').val();
-    console.log(fecha_n);
-    const val_term_con=$('activacion').val();
+    const usuario= $('#usuario').val();
+    const password= $('#clave').val();
+    const dni= $('#dni').val();
+    const nombre= $('#nombres').val();
+    const apellidos= $('#apellidos').val();
+    const correo = $('#correo').val();
+    const telefono = $('#telefono').val();
+    const fecha_n =$('#fecha_nacimiento').val();
+    var checkbox = document.getElementById("activacion");
+    var checkbox_term_con = checkbox.checked ? 1 : 0;
+    console.log(checkbox_term_con)
     let datos = {
         usuario: usuario,
         password: password,
@@ -51,14 +52,13 @@ function nuevo_usuario(){
         correo: correo,
         telefono: telefono,
         fecha_nacimiento: fecha_n,
-        validacion: val_term_con
+        check: checkbox_term_con
     }
     $.ajax({
         url:'nuevo_usuario.php',
         type:'POST',
         data:datos,
         success:function(response){
-            alert("se añadio correctamente")
             const result = JSON.parse(response);
             if (result.status === "error") {
                 alert(result.message);
