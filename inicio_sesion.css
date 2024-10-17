@@ -8,3 +8,11 @@
 .vh-90 {
   height: 100vh;
 }
+.enlace_registro{
+  text-decoration: none;
+  margin-right: 5px;
+}
+.enlace_olvidar_clave{
+  text-decoration: none;
+  margin-left: 5px;
+}

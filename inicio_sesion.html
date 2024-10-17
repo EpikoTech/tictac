@@ -16,84 +16,46 @@
           <div class="col-12 col-md-9 col-lg-7 col-xl-6">
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-4">
-                <h2 class="text-uppercase text-center mb-4">Registrarse</h2>
+                <h2 class="text-uppercase text-center mb-4">Iniciar Sesion</h2>
   
-                <form>
+                <form action="archivo.php" method="POST">
+                  <div class="row mb-3">
+                  <div class="col-3"></div>
+                  <div class="col-6">
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="usuario">Usuario</label>
-                    <input type="text" id="usuario" class="form-control" />
+                    <input type="text" id="nombre_usuario" class="form-control" />
                   </div>
+                </div>
+                <div class="col-3"></div>
+
+              </div>
   
                   <div class="row mb-3">
+                    <div class="col-3"></div>
                     <div class="col-6">
-                      <div data-mdb-input-init class="form-outline">
+                      <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="clave">Clave</label>
-                        <input type="password" id="clave" class="form-control" />
+                        <input type="password" id="password" class="form-control" />
                       </div>
                     </div>
-                    <div class="col-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <label class="form-label" for="repetir_clave">Repetir Clave</label>
-                        <input type="password" id="repetir_clave" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="dni">DNI</label>
-                    <input type="tel" id="dni" class="form-control" />
-                  </div>
-  
-                  <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="nombres">Nombres</label>
-                    <input type="text" id="nombres" class="form-control" />
-                  </div>
-  
-                  <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos" class="form-control" />
-                  </div>
-  
-                  <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="correo">Correo</label>
-                    <input type="email" id="correo" class="form-control" />
-                  </div>
-  
-                  <div class="row mb-3">
-                    <div class="col-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <label class="form-label" for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <label class="form-label" for="fecha_nacimiento">Fecha de Nacimiento</label>
-                        <input type="tel" id="fecha_nacimiento" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="activacion" />
-                    <label class="form-check-label" for="activacion">
-                      Acepto los términos y solicito enviar activación a:
-                    </label>
-                  </div>
-  
-                  <div class="d-flex justify-content-center align-items-center mb-4">
-                    <label for="celular">telefono</label>
-                    <input class="form-check-input me-2" type="checkbox" value="" id="celular" />
-                    <label for="correo">Correo</label>
-                    <input class="form-check-input me-2" type="checkbox" value="" id="correo" />
-                  </div>
+                    <div class="col-3"></div>
+                    
   
                   <div class="d-flex justify-content-center">
                   <button  type="button" data-mdb-button-init
-                    data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Registrar</button>
+                    data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Iniciar</button>
                 </div>
   
                 </form>
+                <div class="row my-4">
+                  <div class="col-12 d-flex justify-content-center align-items-left">
+                    <a class="enlace_registro" href="registro.html">Nuevo Usuario</a>
+                    <span> | </span>
+                    <a class="enlace_olvidar_clave" href="#">Olvista la Clave</a>
+                  </div>
+                </div>
+
   
               </div>
             </div>
