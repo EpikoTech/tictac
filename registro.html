@@ -18,78 +18,78 @@
               <div class="card-body p-4">
                 <h2 class="text-uppercase text-center mb-4">Registrarse</h2>
   
-                <form>
+                <form id="registerForm">
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="usuario">Usuario</label>
-                    <input type="text" id="usuario" class="form-control" />
+                    <input type="text" id="usuario" class="form-control" required/>
                   </div>
   
                   <div class="row mb-3">
                     <div class="col-6">
                       <div data-mdb-input-init class="form-outline">
                         <label class="form-label" for="clave">Clave</label>
-                        <input type="password" id="clave" class="form-control" />
+                        <input type="password" id="clave" class="form-control" required/>
                       </div>
                     </div>
                     <div class="col-6">
                       <div data-mdb-input-init class="form-outline">
                         <label class="form-label" for="repetir_clave">Repetir Clave</label>
-                        <input type="password" id="repetir_clave" class="form-control" />
+                        <input type="password" id="repetir_clave" class="form-control" required/>
                       </div>
                     </div>
                   </div>
   
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="dni">DNI</label>
-                    <input type="tel" id="dni" class="form-control" />
+                    <input type="tel" id="dni" class="form-control" required/>
                   </div>
   
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="nombres">Nombres</label>
-                    <input type="text" id="nombres" class="form-control" />
+                    <input type="text" id="nombres" class="form-control" required/>
                   </div>
   
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos" class="form-control" />
+                    <input type="text" id="apellidos" class="form-control" required/>
                   </div>
   
                   <div data-mdb-input-init class="form-outline mb-3">
                     <label class="form-label" for="correo">Correo</label>
-                    <input type="email" id="correo" class="form-control" />
+                    <input type="email" id="correo" class="form-control" required />
                   </div>
   
                   <div class="row mb-3">
                     <div class="col-6">
                       <div data-mdb-input-init class="form-outline">
                         <label class="form-label" for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" class="form-control" />
+                        <input type="tel" id="telefono" class="form-control" required/>
                       </div>
                     </div>
                     <div class="col-6">
                       <div data-mdb-input-init class="form-outline">
                         <label class="form-label" for="fecha_nacimiento">Fecha de Nacimiento</label>
-                        <input type="tel" id="fecha_nacimiento" class="form-control" />
+                        <input type="date" id="fecha_nacimiento" class="form-control" required />
                       </div>
                     </div>
                   </div>
   
                   <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="activacion" />
+                    <input class="form-check-input me-2" type="checkbox" value="" id="activacion" required />
                     <label class="form-check-label" for="activacion">
                       Acepto los términos y solicito enviar activación a:
                     </label>
                   </div>
   
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <label for="celular">telefono</label>
-                    <input class="form-check-input me-2" type="checkbox" value="" id="celular" />
-                    <label for="correo">Correo</label>
-                    <input class="form-check-input me-2" type="checkbox" value="" id="correo" />
+                    <label for="celular_check">telefono</label>
+                    <input class="form-check-input me-2" type="checkbox" value="" id="celular_check" required />
+                    <label for="correo_check">Correo</label>
+                    <input class="form-check-input me-2" type="checkbox" value="" id="correo_check" />
                   </div>
   
                   <div class="d-flex justify-content-center">
-                  <button  type="button" data-mdb-button-init
+                  <button  type="submit" data-mdb-button-init
                     data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Registrar</button>
                 </div>
   
@@ -103,6 +103,6 @@
     </div>
   </section>
   
-
+  <script src="registro.js"></script>
 </body>
 </html>
