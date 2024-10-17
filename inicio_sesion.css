@@ -1,9 +1,10 @@
-.iniciar_sesion{
-  position: relative;
+.gradient-custom-3 {
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
 }
-.inicio{
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  margin: -25px 0 0 -25px;
+.gradient-custom-4 {
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+}
+
+.vh-90 {
+  height: 100vh;
 }
