@@ -13,7 +13,4 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     } else {
         usuarioError.style.display = 'none';
     }
-
-
-    
 })

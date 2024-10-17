@@ -11,5 +11,5 @@
 
 .error-message {
   display: none;
-  color: red; /* para asegurarte de que sea visible cuando se muestre */
+  color: red; 
 }
