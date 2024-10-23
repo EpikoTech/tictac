@@ -25,7 +25,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     // Clave 2
     const clave2 = document.getElementById('clave2');
     const clave2Error = document.getElementById('clave2Error');
-    if (clave2.value.trim() !== clave.value.trim()) { // Comparar valores de claves
+    if (clave2.value.trim() !== clave.value.trim()) { 
         clave2Error.style.display = 'block';
         valid = false;
     } else {
@@ -35,7 +35,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     // DNI
     const dni = document.getElementById('dni');
     const dniError = document.getElementById('dniError');
-    const dniRegex = /^[0-9]{8}$/; // Corregido a 8 dígitos
+    const dniRegex = /^[0-9]{9}$/; 
 
     if (!dniRegex.test(dni.value.trim())) {
         dniError.style.display = 'block';
@@ -58,7 +58,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const apellidos = document.getElementById('apellidos');
     const apellidosError = document.getElementById('apellidosError');
     if (apellidos.value.trim() === '') {
-        apellidosError.style.display = 'block'; // Mostrar error correctamente
+        apellidosError.style.display = 'block';
         valid = false;
     } else {
         apellidosError.style.display = 'none';
@@ -76,17 +76,34 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         correoError.style.display = 'none';
     }
 
+     // telefono validacion
+     const telefono = document.getElementById('telefono');
+     const telefonoError = document.getElementById('telefonoError');
+ 
+     if (telefono.value.trim().length !== 9) {
+         telefonoError.style.display = 'block';
+         telefonoError.textContent = 'El número de teléfono debe tener 9 dígitos.';
+         valid = false;
+     } else {
+         telefonoError.style.display = 'none'; // Ocultar mensaje si es válido
+     }
+
+
     // Fecha de nacimiento
     const fecha_nacimiento = document.getElementById('fecha_nacimiento');
     const fecha_nacimientoError = document.getElementById('fecha_nacimientoError');
-    const fechaNacimientoRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
+
+
+     // Expresión regular para aceptar solo fechas en formato dd/mm/aaaa
+    console.log(fecha_nacimiento.value)
+    const fechaNacimientoRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 
     if (!fechaNacimientoRegex.test(fecha_nacimiento.value.trim())) {
         fecha_nacimientoError.style.display = 'block';
-        fecha_nacimientoError.textContent = 'La fecha debe tener el formato dd/mm/aaaa.';
+        fecha_nacimientoError.textContent = 'Ingresa correctamente el formato de la fecha';
         valid = false;
     } else {
-        const [dia, mes, anio] = fecha_nacimiento.value.split('/').map(Number);
+        const [anio, mes, dia] = fecha_nacimiento.value.split('-').map(Number);
         const fechaValida = new Date(anio, mes - 1, dia);
         
         if (
@@ -101,11 +118,10 @@ document.getElementById('registerForm').addEventListener('submit', function(even
             valid = false;
         }
     }
-
     // Enviar el formulario si todo es válido
     if (valid) {
         alert('Formulario enviado correctamente');
-        // Aquí puedes añadir la lógica para enviar el formulario
+        // ---- aqui puede ir una logica luego de validar todos los datoss
     } else {
         alert('Por favor, completa todos los campos correctamente.');
     }
