@@ -22,6 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ('$nombre', '$apellido', '$correo','$cel','$dni','$fecha',$vali);";
 
         $conn->exec($sql);
+        // $conn->commit();
+        // $sql ="INSERT INTO `proyecto_tictac`.`registro_usuarios (`usuario`,`password`,`campo_estado`) 
+        // VALUES ('$usuario','$password','1')";
+        // $conn->exec($sql);
         $conn->commit();
         echo ("complete");
     } catch (Exception $e) {

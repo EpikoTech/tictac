@@ -42,7 +42,6 @@ function nuevo_usuario(){
     const fecha_n =$('#fecha_nacimiento').val();
     var checkbox = document.getElementById("activacion");
     var checkbox_term_con = checkbox.checked ? 1 : 0;
-    console.log(checkbox_term_con)
     let datos = {
         usuario: usuario,
         password: password,
@@ -54,6 +53,7 @@ function nuevo_usuario(){
         fecha_nacimiento: fecha_n,
         check: checkbox_term_con
     }
+    
     $.ajax({
         url:'nuevo_usuario.php',
         type:'POST',
@@ -62,9 +62,8 @@ function nuevo_usuario(){
             const result = JSON.parse(response);
             if (result.status === "error") {
                 alert(result.message);
-            } else {
-                window.location.href = "01_inicio_sesion.php";
-            }
+            } 
         }
     })
+    console.log("hola");
 }
