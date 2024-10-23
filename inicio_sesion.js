@@ -53,7 +53,7 @@ function nuevo_usuario(){
         fecha_nacimiento: fecha_n,
         check: checkbox_term_con
     }
-    debugger
+    
     $.ajax({
         url:'nuevo_usuario.php',
         type:'POST',
@@ -62,9 +62,7 @@ function nuevo_usuario(){
             const result = JSON.parse(response);
             if (result.status === "error") {
                 alert(result.message);
-            } else {
-                window.location.href = "01_inicio_sesion.php";
-            }
+            } 
         }
     })
     console.log("hola");
