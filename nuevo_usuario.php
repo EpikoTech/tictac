@@ -15,20 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $host = "localhost";
     try {
         $conn = new PDO("mysql:host=$host;dbname=$base", $user, $pass);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->beginTransaction();
-        $sql = "INSERT INTO `proyecto_tictac`.`usuarios` 
-        (`nombres`, `apellidos`, `correo`,`celular`,`dni`,`fecha_nacimiento`,`val_term_cond`) 
-        VALUES 
-        ('$nombre', '$apellido', '$correo','$cel','$dni','$fecha',$vali);";
 
-        $conn->exec($sql);
-        // $conn->commit();
-        // $sql ="INSERT INTO `proyecto_tictac`.`registro_usuarios (`usuario`,`password`,`campo_estado`) 
-        // VALUES ('$usuario','$password','1')";
-        // $conn->exec($sql);
+        $sql_registro="INSERT INTO `proyecto_tictac`.`registro_usuarios` 
+        (`usuario`,`password`,`campo_estado`) VALUES 
+        ('$usuario','$password','1')";
+        $stmt_registro=$conn->prepare($sql_registro);
+        $stmt_registro->execute();
+
+        $usuario_id=$conn->lastInsertId();
+        //ALTER TABLE `registro_usuarios` CHANGE COLUMN `usuario_ID` `usuario_ID` INT(11) NOT NULL AUTO_INCREMENT FIRST;
+
+        $sql_usuarios = "INSERT INTO `proyecto_tictac`.`usuarios` 
+        (`usuario_ID`,`nombres`, `apellidos`, `correo`,`celular`,`dni`,`fecha_nacimiento`,`val_term_cond`) 
+        VALUES 
+        ('$usuario_id','$nombre', '$apellido', '$correo','$cel','$dni','$fecha',$vali);";
+        $stmt_usuarios=$conn->prepare($sql_usuarios);
+        $stmt_usuarios->execute();
+        
         $conn->commit();
-        echo ("complete");
+        echo ("datos insertados en ambas tablas");
     } catch (Exception $e) {
-        echo "Error : " . $e->getMessage();
+        $conn->rollBack();
+        echo ($usuario_id);
+        echo ("Error : " . $e->getMessage());
     }
 }
