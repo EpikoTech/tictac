@@ -59,11 +59,7 @@ function nuevo_usuario(){
         type:'POST',
         data:datos,
         success:function(response){
-            const result = JSON.parse(response);
-            if (result.status === "error") {
-                alert(result.message);
-            } 
+            
         }
     })
-    console.log("hola");
 }
