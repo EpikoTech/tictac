@@ -12,17 +12,17 @@
     color: red; 
   }
   .gradient-custom-4 {
-    background-color: #28a745; /* El color original */
+    background-color: #28a745; 
     color: white;
-    border-radius: 20px; /* Puedes aumentar o disminuir el valor para redondear más o menos */
-    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 20px;
+    padding: 10px 20px;
     transition: all 0.2s ease-in-out;
 }
 
 .gradient-custom-4:hover {
-    background-color: #218838; /* Color cuando se pasa el mouse */
+    background-color: #218838; 
     color: white;
-    border-radius: 20px; /* Mantener el borde redondeado en el hover */
+    border-radius: 20px; 
     box-shadow: 0 0 15px rgb(26, 110, 26),
     0 0 45px rgb(26, 110, 26),
     0 0 75px rgb(26, 110, 26),
