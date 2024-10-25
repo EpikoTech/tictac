@@ -1,5 +1,9 @@
 <?php
+require_once 'UM_conn_db.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // $ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
     $dni = $_POST['dni'];
@@ -14,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = "pass";
     $host = "localhost";
     try {
-        $conn = new PDO("mysql:host=$host;dbname=$base", $user, $pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conexion = new conexionDB('proyecto_tictac');//conecto a la base de datos
+        $conn = $conexion->getPDO();//obtengo el pdo
         $conn->beginTransaction();
 
         $sql_registro="INSERT INTO `proyecto_tictac`.`registro_usuarios` 
@@ -25,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_registro->execute();
 
         $usuario_id=$conn->lastInsertId();
-        //ALTER TABLE `registro_usuarios` CHANGE COLUMN `usuario_ID` `usuario_ID` INT(11) NOT NULL AUTO_INCREMENT FIRST;
 
         $sql_usuarios = "INSERT INTO `proyecto_tictac`.`usuarios` 
         (`usuario_ID`,`nombres`, `apellidos`, `correo`,`celular`,`dni`,`fecha_nacimiento`,`val_term_cond`) 
@@ -36,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $conn->commit();
         echo ("datos insertados en ambas tablas");
+        // echo "Tu dirección IP es: $ip";
     } catch (Exception $e) {
         $conn->rollBack();
         echo ($usuario_id);
