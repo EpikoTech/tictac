@@ -38,21 +38,25 @@
 
 /* Botón de iniciar */
 .gradient-custom-4 {
-  background-color: #28a745; 
+  background: linear-gradient(to right, #37a2b8, #012729);
   color: white;
-  border-radius: 20px; 
-  padding: 10px 20px; 
-  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 12px; /* Ajusta el borde para que no sea tan redondo */
+  padding: 12px 24px; /* Aumenta el espacio interno */
+  font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Reduce la opacidad y aumenta el desenfoque */
 }
 
 .gradient-custom-4:hover {
-  background-color: #218838; 
+  background-color: #173e9b; 
   color: white;
   border-radius: 20px; 
-  box-shadow: 0 0 15px rgb(26, 110, 26),
-  0 0 45px rgb(26, 110, 26),
-  0 0 75px rgb(26, 110, 26),
-  0 0 115px rgb(26, 110, 26);
+  box-shadow: 0 0 15px rgb(29, 66, 121),
+  0 0 45px rgb(29, 66, 121),
+  0 0 75px rgb(29, 66, 121),
+  0 0 115px rgb(29, 66, 121);
 }
 
 
