@@ -39,6 +39,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     if (!dniRegex.test(dni.value.trim())) {
         dniError.style.display = 'block';
+        dniError.textContent = 'DNI debe contener 9 digitos'
         valid = false;
     } else {
         dniError.style.display = 'none';
@@ -71,6 +72,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     if (!correoRegex.test(correo.value.trim())) {
         correoError.style.display = 'block';
+        correoError.textContent = 'ingresa correctamente este campo'
         valid = false;
     } else {
         correoError.style.display = 'none';
