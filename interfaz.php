@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Esta es la interfaz del usuario</h1>
-    
+    <?php
+    session_start();     
+    echo "USUARIO :".$_SESSION["usuario"];
+    ?>
 </body>
 </html>

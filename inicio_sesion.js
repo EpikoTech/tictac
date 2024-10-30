@@ -1,5 +1,5 @@
 //Creando metodos para la validacion de datos
-function inicio_sesion() {
+function login() {
     const usuario = $("#nombre_usuario").val();
     const password = $("#password").val();
     let datos = {
@@ -12,18 +12,19 @@ function inicio_sesion() {
         type: "POST",
         data: datos,
         success: function (result) {
-            const usuarios = JSON.parse(result);
-            var token = 0;
-            let validacion = false;
-            usuarios.forEach(element => {
-                console.log(element.usuario + " " + element.password);
-                if ((element.usuario == usuario) && (element.password == password)) {
-                    validacion = true;
-                    token = element.id;
-                }
-            });
+            const json = JSON.parse(result);
+            debugger;
+            //var token = 0;
+            let validacion = json.resultado == 1 ? true : false;
+            // usuarios.forEach(element => {
+            //     console.log(element.usuario + " " + element.password);
+            //     if ((ement.usuario == usuario) && (element.password == password)) {le
+            //         validacion = true;
+            //         token = element.id;
+            //     }
+            // });
             if (validacion) {
-                window.location.href = "interfaz.html?id=" + token;
+                window.location.href = "interfaz.php";
             } else {
                 alert("Usuario o contraseña incorrectos.");
             }
