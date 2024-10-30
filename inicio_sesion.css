@@ -1,39 +1,78 @@
 .gradient-custom-3 {
-  background: linear-gradient(to right, #000000, #490679); /* Negro a violeta medio */
+  background: linear-gradient(to right, #41d9ff, #000000fe);
+  min-height: 100vh;
 }
 
-
-.card{
-  width: 500px;
+/* Contenedor principal que rodea el formulario y el logo */
+.main-container {
+  display: flex;
+  border: 2px solid ;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.vh-90 {
-  height: 100vh;
-}
-.enlace_registro{
-  text-decoration: none;
-  margin-right: 5px;
-}
-.enlace_olvidar_clave{
-  text-decoration: none;
-  margin-left: 5px;
+/* Contenedor del formulario */
+.form-container {
+  padding: 20px;
+  width: 50%;
+  background-color: #ffffff;
 }
 
+/* Contenedor del logo */
+.logo-container {
+  width: 50%;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 80%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* Botón de iniciar */
 .gradient-custom-4 {
-  background-color: #28a745; 
+  background: linear-gradient(to right, #37a2b8, #012729);
   color: white;
-  border-radius: 20px; 
-  padding: 10px 20px; 
-  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 12px; /* Ajusta el borde para que no sea tan redondo */
+  padding: 12px 24px; /* Aumenta el espacio interno */
+  font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Reduce la opacidad y aumenta el desenfoque */
 }
 
 .gradient-custom-4:hover {
-  background-color: #218838; 
+  background-color: #173e9b; 
   color: white;
   border-radius: 20px; 
-  box-shadow: 0 0 15px rgb(26, 110, 26),
-  0 0 45px rgb(26, 110, 26),
-  0 0 75px rgb(26, 110, 26),
-  0 0 115px rgb(26, 110, 26);
+
 }
 
+
+/* Enlaces del registro y recuperar clave */
+.enlace_registro, .enlace_olvidar_clave {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .main-container {
+      flex-direction: column-reverse; /* Cambia a column para que el logo se muestre arriba */
+  }
+
+  .logo-container, .form-container {
+      width: 100%;
+  }
+
+  .logo-img {
+      width: 50%;
+  }
+}
