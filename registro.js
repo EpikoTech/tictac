@@ -94,6 +94,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const fecha_nacimientoError = document.getElementById('fecha_nacimientoError');
 
 
+
      // Expresión regular para aceptar solo fechas en formato dd/mm/aaaa
     console.log(fecha_nacimiento.value)
     const fechaNacimientoRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
@@ -122,6 +123,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     if (valid) {
         alert('Formulario enviado correctamente');
         // ---- aqui puede ir una logica luego de validar todos los datoss
+        
     } else {
         alert('Por favor, completa todos los campos correctamente.');
     }
