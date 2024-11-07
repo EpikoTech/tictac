@@ -10,36 +10,32 @@
     <title>Inicio Sesión</title>
 </head>
 <body class="gradient-custom-3">
-    <section class="vh-100 d-flex justify-content-center align-items-center">
-        <div class="main-container d-flex">
-            <!-- Columna del formulario -->
-            <div class="card p-4 form-container">
-                <h2 class="text-uppercase text-center mb-4">Iniciar Sesión</h2>
-              
-                    <div class="mb-3">
-                        <label class="form-label" for="usuario">Usuario</label>
-                        <input type="text" id="nombre_usuario" class="form-control" />
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label" for="clave">Clave</label>
-                        <input type="password" id="password" class="form-control" />
-                    </div>
-                    <div class="d-flex justify-content-center">
-                      <button class="btn btn-block btn-lg gradient-custom-4" onclick="login()">Iniciar</button>
-                  </div>
-                
-                <div class="text-center mt-3">
-                    <a class="enlace_registro" href="registro.html">Nuevo Usuario</a> |
-                    <a class="enlace_olvidar_clave" href="#">Olvidaste la Clave</a>
-                </div>
+    <section class="vh-100 d-flex justify-content-center align-items-center flex-column">
+        <!-- Contenedor del logo arriba -->
+        <div class="logo-container d-flex justify-content-center align-items-center mb-3">
+            <img src="img/logo2.png" alt="Tictac Logo" class="logo-img">
+        </div>
+        <!-- Contenedor del formulario debajo del logo -->
+        <div class="card p-4 form-container">
+            <h2 class="text-uppercase text-center mb-4">Iniciar Sesión</h2>
+            <div class="mb-3">
+                <label class="form-label" for="usuario">Usuario</label>
+                <input type="text" id="nombre_usuario" class="form-control" />
             </div>
-            <!-- Columna del logo -->
-            <div class="logo-container d-flex justify-content-center align-items-center">
-                <img src="img/logo2.png" alt="Tictac Logo" class="logo-img">
+            <div class="mb-4">
+                <label class="form-label" for="clave">Clave</label>
+                <input type="password" id="password" class="form-control" />
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-block btn-lg gradient-custom-4" onclick="login()">Iniciar</button>
+            </div>
+            <div class="text-center mt-3">
+                <a class="enlace_registro" href="registro.html">Nuevo Usuario</a> |
+                <a class="enlace_olvidar_clave" href="#">Olvidaste la Clave</a>
             </div>
         </div>
     </section>
-   
 </body>
-
 </html>
+
+  
