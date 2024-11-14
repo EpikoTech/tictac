@@ -3,76 +3,58 @@
   min-height: 100vh;
 }
 
-/* Contenedor principal que rodea el formulario y el logo */
-.main-container {
-  display: flex;
-  border: 2px solid ;
-  border-radius: 15px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Contenedor del formulario */
-.form-container {
+.logo-container { /* Fondo negro alrededor del logo */
   padding: 20px;
-  width: 50%;
-  background-color: #ffffff;
-}
-
-/* Contenedor del logo */
-.logo-container {
-  width: 50%;
-  background-color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 15px;
 }
 
 .logo-img {
-  width: 80%;
-  max-height: 350px;
+  width: 500px;
+  max-height: 150px;
   object-fit: contain;
 }
 
-/* Botón de iniciar */
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
 .gradient-custom-4 {
   background: linear-gradient(to right, #37a2b8, #012729);
   color: white;
   border: none;
-  border-radius: 12px; /* Ajusta el borde para que no sea tan redondo */
-  padding: 12px 24px; /* Aumenta el espacio interno */
-  font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Reduce la opacidad y aumenta el desenfoque */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .gradient-custom-4:hover {
-  background-color: #173e9b; 
+  background-color: #173e9b;
   color: white;
-  border-radius: 20px; 
-
+  border-radius: 20px;
 }
 
-
-/* Enlaces del registro y recuperar clave */
 .enlace_registro, .enlace_olvidar_clave {
   text-decoration: none;
   font-size: 0.9rem;
 }
-
-@media (max-width: 576px) {
+@media (max-width: 400px) {
   .main-container {
       flex-direction: column-reverse; /* Cambia a column para que el logo se muestre arriba */
   }
 
   .logo-container, .form-container {
-      width: 100%;
+      width: 97%;
   }
 
   .logo-img {
-      width: 50%;
+      width: 90%;
   }
 }
